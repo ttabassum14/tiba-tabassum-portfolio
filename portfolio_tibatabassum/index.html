@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Open Graph Meta Tags -->
+    <title>Tiba Tabassum | ERP, QA/UAT & Software Development</title>
+    <meta name="description" content="CSE graduate with experience in ERP business development, manual testing, test case preparation, business workflows, Java web development, and academic research.">
+    <meta name="author" content="Tiba Tabassum">
+    <meta name="keywords" content="Tiba Tabassum, CSE Graduate, ERP, QA, UAT, Business Analysis, Business Development, Java, JSP, Servlet, MySQL, Bangladesh, Dhaka">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tiba Tabassum | ERP, QA/UAT & Software Development">
+    <meta property="og:description" content="CSE graduate with ERP business development, manual testing, business workflow, Java web development, and research experience.">
+    <meta property="og:url" content="https://ttabassum14.github.io">
+    <meta property="og:image" content="https://ttabassum14.github.io/og-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tiba Tabassum | ERP, QA/UAT & Software Development">
+    <meta name="twitter:description" content="CSE graduate experienced in ERP, manual testing, business workflows, Java web development, and research. Based in Dhaka, Bangladesh.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-darkBg text-slate-300 font-sans antialiased selection:bg-accentBlue selection:text-darkBg">
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="sticky top-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold text-white tracking-wider">TIBA.<span class="text-accentBlue">DEV</span></a>
+
+            <!-- Desktop nav -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium" id="desktop-nav">
+                <a href="#about"      class="nav-link" data-section="about">About</a>
+                <a href="#skills"     class="nav-link" data-section="skills">Skills</a>
+                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#projects"   class="nav-link" data-section="projects">Projects</a>
+                <a href="#research"   class="nav-link" data-section="research">Research</a>
+                <a href="#education"  class="nav-link" data-section="education">Education</a>
+                <a href="#additional" class="nav-link" data-section="additional">Contact</a>
+            </div>
+
+            
+                <!-- Mobile hamburger button -->
+                <button id="hamburger-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg border border-slate-700 bg-slate-800/60 gap-1.5 focus:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu-closed md:hidden border-t border-slate-800 bg-darkBg/95 backdrop-blur-md overflow-hidden transition-all duration-300">
+            <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col space-y-1">
+                <a href="#about"      class="mobile-nav-link" data-section="about">About</a>
+                <a href="#skills"     class="mobile-nav-link" data-section="skills">Skills</a>
+                <a href="#experience" class="mobile-nav-link" data-section="experience">Experience</a>
+                <a href="#projects"   class="mobile-nav-link" data-section="projects">Projects</a>
+                <a href="#research"   class="mobile-nav-link" data-section="research">Research</a>
+                <a href="#education"  class="mobile-nav-link" data-section="education">Education</a>
+                <a href="#additional" class="mobile-nav-link" data-section="additional">More</a>
+                <a href="#contact"    class="mobile-nav-link mt-2 text-accentBlue font-semibold">Let's Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== FLOATING CHAT BUTTON ===================== -->
+<div id="float-chat-wrapper">
+
+    <!-- Chat Popup -->
+    <div id="chat-popup" class="chat-popup chat-popup-hidden">
+        <div class="chat-popup-header">
+            <div class="chat-popup-avatar">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div>
+                <p class="chat-popup-name">Tiba Tabassum</p>
+                <p class="chat-popup-status"><span class="chat-status-dot"></span> Available for work</p>
+            </div>
+            <button id="chat-close-btn" class="chat-close-btn" aria-label="Close chat"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="chat-popup-body">
+            <!-- Received message bubble -->
+            <div class="chat-bubble-received">
+                <p>👋 Hi there! I'm Tiba.</p>
+            </div>
+            <div class="chat-bubble-received">
+                <p>I'm interested in opportunities across software development, ERP, QA/UAT, and IT/business analysis. Feel free to reach out!</p>
+            </div>
+
+            <!-- Pre-filled message area -->
+            <div class="chat-input-label">Your message</div>
+            <textarea id="chat-message" class="chat-textarea" rows="3">Hi Tiba, I came across your portfolio and would love to connect!</textarea>
+        </div>
+
+        <div class="chat-popup-footer">
+            <a id="chat-send-linkedin" href="https://www.linkedin.com/in/tiba-tabassum/" target="_blank" rel="noopener" class="chat-send-btn chat-send-linkedin" title="Message on LinkedIn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a id="chat-send-whatsapp" href="#" class="chat-send-btn chat-send-whatsapp" target="_blank" rel="noopener" title="Send via WhatsApp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Trigger Button -->
+    <a href="#" id="float-chat-btn" aria-label="Let's Chat" role="button">
+        <i class="fas fa-comment-dots" id="float-chat-icon"></i>
+        <span class="float-chat-label">Let's Chat</span>
+    </a>
+
+    </div>
+
+    <!-- ===================== HERO ===================== -->
+    <header id="about" class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-32 md:pb-24 flex flex-col items-start justify-center overflow-hidden reveal">
+        <div class="mesh-top-right"></div>
+        <div class="mesh-bottom-left"></div>
+
+        <span class="text-accentBlue font-mono text-sm tracking-widest uppercase mb-3 block">Hi, my name is</span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-4">Tiba Tabassum.</h1>
+        <h2 class="text-2xl sm:text-4xl font-bold text-slate-400 mb-6">Connecting technology, business processes, and quality software.</h2>
+        <p class="max-w-2xl text-base sm:text-lg text-slate-400 mb-8 leading-relaxed">
+            I am a <strong class="text-white">Computer Science & Engineering graduate</strong> with experience spanning ERP business development, manual software testing, test-case preparation, business workflow analysis, and Java-based web development. During my IT internship at Prime Bank PLC, I built a web-based reporting module. I enjoy bridging technical and business needs to help deliver reliable, practical solutions.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-8">
+            <a href="#projects" class="btn-cta-blue">View My Projects</a>
+            <a href="#contact"  class="btn-cta-outline">Let's Connect</a>
+            <!-- CV Download Button -->
+            <a href="Tiba_Tabassum_CV.pdf" download class="btn-cta-cv" title="Download CV">
+                <i class="fas fa-download text-xs"></i> Download CV
+            </a>
+        </div>
+
+        <div class="flex space-x-6 text-xl">
+            <a href="https://github.com/ttabassum14" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tiba-tabassum/"  target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <!-- ResearchGate: fa-researchgate is NOT in FA6 free. Using a styled text link instead -->
+            <a href="https://www.researchgate.net/profile/Tiba-Tabassum?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon social-icon-rg" aria-label="ResearchGate" title="ResearchGate">
+                <span class="rg-text">RG</span>
+            </a>
+        </div>
+    </header>
+
+    <hr class="border-slate-800 max-w-6xl mx-auto">
+
+
+    <!-- ===================== SKILLS ===================== -->
+<section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+    <div class="flex items-center space-x-4 mb-10">
+        <h2 class="section-title">Technical Toolkit & Professional Skills</h2>
+        <div class="title-line"></div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-code"></i></div>
+            <h3 class="tech-card-heading">Programming</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">Java</span><span class="mini-badge">Python</span>
+                <span class="mini-badge">JavaScript</span><span class="mini-badge">C++</span>
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3 class="tech-card-heading">Web Development</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">HTML</span><span class="mini-badge">CSS</span>
+                <span class="mini-badge">Bootstrap</span><span class="mini-badge">JSP</span>
+                <span class="mini-badge">Servlet</span><span class="mini-badge">PHP</span>
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-database"></i></div>
+            <h3 class="tech-card-heading">Database & QA</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">MySQL</span><span class="mini-badge">PostgreSQL</span>
+                <span class="mini-badge">Manual Testing</span><span class="mini-badge">Test Cases</span>
+                <span class="mini-badge">Defect Reporting</span><span class="mini-badge">Data Validation</span>
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-sitemap"></i></div>
+            <h3 class="tech-card-heading">ERP & Business</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">ERP Workflows</span><span class="mini-badge">B2B Research</span>
+                <span class="mini-badge">Requirements Understanding</span><span class="mini-badge">Business Process Analysis</span>
+                <span class="mini-badge">Lead Generation</span>
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-toolbox"></i></div>
+            <h3 class="tech-card-heading">Tools & IDEs</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">Git/GitHub</span><span class="mini-badge">Eclipse</span>
+                <span class="mini-badge">VS Code</span><span class="mini-badge">NetBeans</span>
+                <span class="mini-badge">XAMPP</span><span class="mini-badge">Apache Tomcat</span>
+                <span class="mini-badge">Notepad++</span><span class="mini-badge">Google Colab</span>
+                <span class="mini-badge">Packet Tracer</span><span class="mini-badge">Overleaf</span>
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-people-group"></i></div>
+            <h3 class="tech-card-heading">Productivity & Design</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">MS Office</span><span class="mini-badge">Canva</span>
+                <span class="mini-badge">Lucidchart</span><span class="mini-badge">Draw.io</span>
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-comments"></i></div>
+            <h3 class="tech-card-heading">Soft Skills</h3>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="mini-badge">Team Collaboration</span><span class="mini-badge">Technical Communication</span>
+                <span class="mini-badge">Problem Solving</span><span class="mini-badge">Leadership & Initiative</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+    <div class="flex items-center space-x-4 mb-10">
+        <h2 class="section-title">Professional Experience</h2><div class="title-line"></div>
+    </div>
+    <div class="timeline-container">
+        <div class="timeline-item group reveal-child">
+            <div class="timeline-dot-active"></div>
+            <div class="timeline-header"><div>
+                <h3 class="timeline-job">Business Development Associate</h3>
+                <p class="timeline-company">Progeny Technologies Ltd., Dhaka</p>
+            </div><span class="timeline-date">September 2026 — Present</span></div>
+            <ul class="timeline-details">
+                <li>Conduct B2B prospect research, identify potential clients, and perform cold calling to generate leads and explore ERP business opportunities.</li>
+                <li>Perform manual testing of ERP functionalities to verify system behavior and identify functional issues.</li>
+                <li>Prepare and execute test cases to validate ERP features, business workflows, and expected system outputs.</li>
+                <li>Identify, document, and report software defects with relevant details to support investigation and resolution.</li>
+                <li>Verify system data, generated reports, and output accuracy to identify inconsistencies and potential issues.</li>
+                <li>Assist with ERP customization, code debugging, and modification of existing functionalities based on business and technical requirements.</li>
+                <li>Support sales, testing, and development activities to align ERP functionality with business needs.</li>
+            </ul>
+        </div>
+        <div class="timeline-item group reveal-child">
+            <div class="timeline-dot-inactive"></div>
+            <div class="timeline-header"><div>
+                <h3 class="timeline-job">Business Development Intern</h3>
+                <p class="timeline-company">Progeny Technologies Ltd., Dhaka</p>
+            </div><span class="timeline-date">June 2026 — August 2026</span></div>
+            <ul class="timeline-details">
+                <li>Conducted B2B market research across industries to identify business challenges and ERP/digital transformation opportunities.</li>
+                <li>Researched operational processes and how ERP can support sales, inventory, procurement, finance, and operations.</li>
+                <li>Engaged prospective clients to understand business challenges, requirements, and current workflows.</li>
+                <li>Connected client requirements with relevant ERP capabilities and business processes.</li>
+                <li>Supported technical and business teams with ERP-related development, customization, data management, and process optimization activities.</li>
+                <li>Developed professional presentations, marketing materials, and visual content to communicate ERP and technology concepts.</li>
+            </ul>
+        </div>
+        <div class="timeline-item group reveal-child">
+            <div class="timeline-dot-inactive"></div>
+            <div class="timeline-header"><div>
+                <h3 class="timeline-job">IT Intern</h3><p class="timeline-company">Prime Bank PLC, Dhaka</p>
+            </div><span class="timeline-date">April 2025 — July 2025</span></div>
+            <ul class="timeline-details">
+                <li>Built a full-stack Report Module web application using Java Servlet, JSP, and MySQL for the Card & ADC team.</li>
+                <li>Enabled generation and export of report types in CSV/PDF formats, reducing manual data-processing effort.</li>
+                <li>Collaborated with banking stakeholders to translate business requirements into functional features.</li>
+                <li>Designed and optimized relational MySQL database schemas for accurate, high-volume reporting.</li>
+            </ul>
+        </div>
+        <div class="timeline-item group reveal-child">
+            <div class="timeline-dot-inactive"></div>
+            <div class="timeline-header"><div>
+                <h3 class="timeline-job">Student on Duty (SOD) — Library</h3>
+                <p class="timeline-company">Independent University Bangladesh, Dhaka</p>
+            </div><span class="timeline-date">May 2023 — August 2023</span></div>
+            <ul class="timeline-details">
+                <li>Assisted students and faculty with resource accessibility, improving library operations and academic productivity.</li>
+                <li>Provided guidance on digital research tools to support an organized study environment.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    
+
+    <hr class="border-slate-800 max-w-6xl mx-auto">
+
+    <!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+    <div class="flex items-center space-x-4 mb-10"><h2 class="section-title">Featured Projects</h2><div class="title-line"></div></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="project-card"><div class="p-6">
+            <div class="flex justify-between items-center mb-4"><span class="project-tag">Internship Project</span>
+                <div class="project-links"><a href="https://github.com/ttabassum14/Report_Module" target="_blank" rel="noopener" class="hover:text-white" aria-label="View Report Module on GitHub" title="View on GitHub"><i class="fab fa-github"></i></a></div></div>
+            <h3 class="project-title">Report Module</h3><p class="project-subtitle">Prime Bank PLC</p>
+            <p class="project-description">Developed a dynamic web-based reporting system for internal reporting used by two banking teams. Supports report filtering, generation, and export in CSV/PDF formats.</p>
+            <p class="text-sm text-slate-400 mt-3"><strong>Technologies:</strong> Java, JSP, Servlet, MySQL, Apache POI</p>
+            <p class="text-sm text-slate-400 mt-1"><strong>Tools:</strong> Eclipse, XAMPP</p>
+        </div><div class="project-footer"><div class="footer-badge-box"><span class="mini-badge">Java</span><span class="mini-badge">JSP</span><span class="mini-badge">Servlet</span><span class="mini-badge">MySQL</span></div></div></div>
+
+        <div class="project-card"><div class="p-6">
+            <div class="flex justify-between items-center mb-4"><span class="project-tag">Academic Database Project</span>
+                <div class="project-links"><a href="https://github.com/ttabassum14/mediCare" target="_blank" rel="noopener" class="hover:text-white" aria-label="View Chronic Health Management project on GitHub" title="View on GitHub"><i class="fab fa-github"></i></a></div></div>
+            <h3 class="project-title">Chronic Health Management System</h3><p class="project-subtitle">Healthcare Web Application</p>
+            <p class="project-description">Built a full-stack web system for managing patient records, chronic conditions, and appointment scheduling in a simulated clinic environment, using a normalized MySQL database and PHP backend.</p>
+            <p class="text-sm text-slate-400 mt-3"><strong>Technologies:</strong> HTML, CSS, PHP, MySQL</p>
+            <p class="text-sm text-slate-400 mt-1"><strong>Tools:</strong> Visual Studio Code, XAMPP</p>
+        </div><div class="project-footer"><div class="footer-badge-box"><span class="mini-badge">PHP</span><span class="mini-badge">MySQL</span><span class="mini-badge">HTML</span><span class="mini-badge">CSS</span></div></div></div>
+
+        <div class="project-card"><div class="p-6">
+            <div class="flex justify-between items-center mb-4"><span class="project-tag">Academic OOP Project</span>
+                <div class="project-links"><a href="https://github.com/ttabassum14" target="_blank" rel="noopener" class="hover:text-white" aria-label="View GitHub profile" title="View GitHub profile"><i class="fab fa-github"></i></a></div></div>
+            <h3 class="project-title">Home Theatre Simulation</h3><p class="project-subtitle">Object-Oriented Programming</p>
+            <p class="project-description">Simulated a home theatre system in Java to demonstrate encapsulation, inheritance, and polymorphism through interactive, structured class hierarchies.</p>
+            <p class="text-sm text-slate-400 mt-3"><strong>Technology:</strong> Java</p><p class="text-sm text-slate-400 mt-1"><strong>Tool:</strong> NetBeans</p>
+        </div><div class="project-footer"><div class="footer-badge-box"><span class="mini-badge">Java</span><span class="mini-badge">NetBeans</span><span class="mini-badge">OOP</span></div></div></div>
+    </div>
+</section>
+
+    
+
+    <hr class="border-slate-800 max-w-6xl mx-auto">
+
+    <!-- ===================== RESEARCH ===================== -->
+<section id="research" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+    <div class="flex items-center space-x-4 mb-10"><h2 class="section-title">Research & Publications</h2><div class="title-line"></div></div>
+    <div class="space-y-6">
+        <div class="research-card"><div class="card-accent-line"></div>
+            <div class="flex flex-wrap justify-between items-start gap-2 mb-2"><h3 class="research-paper-title">IoT-Enhanced Precision Saline Monitoring System</h3><span class="author-badge-blue">Co-author</span></div>
+            <p class="research-venue">Under Review · 2025</p>
+            <p class="research-paper-body">Research on an IoT-enhanced system for precision saline monitoring.</p>
+            <div class="research-links"><a href="https://www.researchgate.net/profile/Tiba-Tabassum?ev=hdr_xprf" target="_blank" rel="noopener" class="research-link"><i class="fas fa-external-link-alt text-xs mr-1"></i>View ResearchGate Profile</a></div>
+        </div>
+        <div class="research-card"><div class="card-accent-line"></div>
+            <div class="flex flex-wrap justify-between items-start gap-2 mb-2"><h3 class="research-paper-title">The Advancement of Camera</h3><span class="author-badge-blue">Co-author</span></div>
+            <p class="research-venue">Published · 2024</p>
+            <p class="research-paper-body">A publication exploring the advancement of camera technology.</p>
+            <div class="research-links"><a href="https://www.researchgate.net/profile/Tiba-Tabassum?ev=hdr_xprf" target="_blank" rel="noopener" class="research-link"><i class="fas fa-external-link-alt text-xs mr-1"></i>View ResearchGate Profile</a></div>
+        </div>
+        <div class="research-card"><div class="card-accent-line"></div>
+            <div class="flex flex-wrap justify-between items-start gap-2 mb-2"><h3 class="research-paper-title">Literature Review on Web Apps for Chronic Health Management</h3><span class="author-badge-green">Author</span></div>
+            <p class="research-venue">Published · 2024</p>
+            <p class="research-paper-body">A literature review of web applications for chronic health management.</p>
+            <div class="research-links"><a href="https://www.researchgate.net/profile/Tiba-Tabassum?ev=hdr_xprf" target="_blank" rel="noopener" class="research-link"><i class="fas fa-external-link-alt text-xs mr-1"></i>View ResearchGate Profile</a></div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <hr class="border-slate-800 max-w-6xl mx-auto">
+
+    <!-- ===================== EDUCATION ===================== -->
+<section id="education" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+    <div class="flex items-center space-x-4 mb-10"><h2 class="section-title">Education</h2><div class="title-line"></div></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-6">
+            <h3 class="edu-subheading"><span><i class="fas fa-graduation-cap"></i></span><span>Academic History</span></h3>
+            <div class="edu-history-node">
+                <h4 class="text-white font-bold text-base">BSc in Computer Science & Engineering</h4>
+                <p class="text-sm text-slate-400">Independent University Bangladesh, Dhaka</p>
+                <p class="text-xs text-slate-500 font-mono">July 2020 — July 2025</p>
+                <div class="pt-1 flex flex-wrap gap-3 text-xs font-mono text-accentBlue"><span>CGPA: 3.17 / 4.00</span><span>Minor: Management Information Systems (MIS)</span></div>
+                <p class="text-sm text-slate-400 mt-2">Relevant coursework: Data Structures, Algorithms, Database Systems, Object-Oriented Programming, Networking, Software Engineering.</p>
+            </div>
+            <div class="edu-history-node">
+                <h4 class="text-white font-semibold text-sm">Higher Secondary Certificate (HSC)</h4>
+                <p class="text-xs text-slate-400">Shaheed Bir Uttam Lt Anwar Girls College, Dhaka</p>
+                <p class="text-xs text-slate-500 font-mono">2017 — 2019</p>
+                <p class="text-[11px] text-slate-500 font-mono">Science Group · GPA: 4.33 / 5.00</p>
+            </div>
+            <div class="edu-history-node">
+                <h4 class="text-white font-semibold text-sm">Secondary School Certificate (SSC)</h4>
+                <p class="text-xs text-slate-400">Shaheed Bir Uttam Lt Anwar Girls College, Dhaka</p>
+                <p class="text-xs text-slate-500 font-mono">2015 - 2017</p>
+                <p class="text-[11px] text-slate-500 font-mono">Science Group · GPA: 5.00 / 5.00</p>
+            </div>
+        </div>
+        <div class="space-y-4">
+            <h3 class="edu-subheading"><span><i class="fas fa-certificate"></i></span><span>Certificates & Training</span></h3>
+            <div class="credential-item"><div class="text-accentGreen text-lg"><i class="fas fa-check-circle"></i></div><div><h4 class="text-white text-sm font-medium">IT Internship</h4><p class="text-xs text-slate-500">Prime Bank PLC</p></div></div>
+            <div class="credential-item"><div class="text-accentBlue text-lg"><i class="fas fa-award"></i></div><div><h4 class="text-white text-sm font-medium">Huawei Mobile App Training</h4><p class="text-xs text-slate-500">Huawei</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ADDITIONAL INFORMATION ===================== -->
+<section id="additional" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 reveal">
+    <div class="flex items-center space-x-4 mb-10"><h2 class="section-title">Additional Information</h2><div class="title-line"></div></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-language"></i></div><h3 class="tech-card-heading">Languages</h3>
+            <ul class="timeline-details mt-4"><li>English — Fluent</li><li>Bangla — Native</li><li>Hindi — Conversational</li></ul>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-chalkboard-user"></i></div><h3 class="tech-card-heading">Seminars & Workshops</h3>
+            <ul class="timeline-details mt-4"><li>Tech Fest</li><li>SETS Fest</li><li>CCDS Research Paper Workshop</li><li>Huawei Training (Mobile App)</li></ul>
+        </div>
+        <div class="tech-card">
+            <div class="tech-icon"><i class="fas fa-user-check"></i></div><h3 class="tech-card-heading">Professional Strengths</h3>
+            <ul class="timeline-details mt-4"><li>Team collaboration</li><li>Technical communication</li><li>Problem solving</li><li>Leadership and initiative</li></ul>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- ===================== FOOTER / CONTACT ===================== -->
+    <footer id="contact" class="footer-wrapper reveal">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-extrabold text-white mb-4">Let's build something impactful together!</h2>
+            <p class="text-slate-400 text-sm max-w-xl mx-auto mb-8">
+                I am interested in opportunities across <strong class="text-white">software development, ERP, QA/UAT testing, and IT/business analysis</strong>. If you have an opportunity, project idea, or would like to connect professionally, feel free to reach out.
+            </p>
+
+            <div class="contact-methods-box">
+                <!-- Direct email opens mail client -->
+                <a href="mailto:tiba2030132@gmail.com" class="contact-email">
+                    <i class="fas fa-envelope text-accentBlue"></i> <span>tiba2030132@gmail.com</span>
+                </a>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <a href="tel:+8801611383770" class="contact-email"><i class="fas fa-phone text-accentBlue"></i> <span>+880 1611383770</span></a>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <span class="flex items-center space-x-2">
+                    <i class="fas fa-map-marker-alt text-accentBlue"></i> <span>Dhaka, Bangladesh</span>
+                </span>
+            </div>
+
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="https://github.com/ttabassum14"       target="_blank" rel="noopener" class="social-icon text-xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tiba-tabassum/" target="_blank" rel="noopener" class="social-icon text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.researchgate.net/profile/Tiba-Tabassum?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon social-icon-rg" aria-label="ResearchGate">
+                    <span class="rg-text">RG</span>
+                </a>
+            </div>
+
+            <p class="text-xs text-slate-600">
+                &copy; 2026 Tiba Tabassum. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===================== JS ===================== -->
+    <script>
+// ── 0. Prevent scroll restoration jump ───────────────────────────────────
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Disable transitions during initial setup to prevent flash
+document.body.classList.add('preload');
+
+// ── 1. Mobile hamburger menu ──────────────────────────────────────────────
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu   = document.getElementById('mobile-menu');
+const mobileLinks  = document.querySelectorAll('.mobile-nav-link');
+
+function toggleMenu(open) {
+    const isOpen = open ?? mobileMenu.classList.contains('mobile-menu-closed');
+    mobileMenu.classList.toggle('mobile-menu-closed', !isOpen);
+    mobileMenu.classList.toggle('mobile-menu-open',    isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    hamburgerBtn.classList.toggle('is-open', isOpen);
+}
+
+hamburgerBtn.addEventListener('click', () => toggleMenu());
+mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+document.addEventListener('click', e => {
+    if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) toggleMenu(false);
+});
+
+// ── 2. Active nav link on scroll ─────────────────────────────────────────
+const sections = document.querySelectorAll('section[id], header[id]');
+const navLinks  = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.toggle('nav-link-active', link.dataset.section === id);
+            });
+        }
+    });
+}, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── 3. Scroll-reveal ─────────────────────────────────────────────────────
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+// Pre-reveal everything currently visible BEFORE transitions are re-enabled
+document.querySelectorAll('.reveal').forEach(el => {
+    if (isInViewport(el)) el.classList.add('revealed');
+});
+
+// Stagger children — now includes timeline items
+document.querySelectorAll('.tech-card, .project-card, .research-card, .credential-item, .timeline-item').forEach((card, i) => {
+    card.style.transitionDelay = `${(i % 4) * 80}ms`;
+    card.classList.add('reveal-child');
+    if (isInViewport(card)) card.classList.add('revealed');
+});
+
+// Re-enable transitions after initial reveal is done
+requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+        document.body.classList.remove('preload');
+    });
+});
+
+// Observe off-screen sections
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal:not(.revealed)').forEach(el => revealObserver.observe(el));
+
+// Observe off-screen children
+const childObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            childObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal-child:not(.revealed)').forEach(el => childObserver.observe(el));
+
+// ── 4. Floating Chat Popup ────────────────────────────────────────────────
+const floatBtn       = document.getElementById('float-chat-btn');
+const chatPopup      = document.getElementById('chat-popup');
+const chatCloseBtn   = document.getElementById('chat-close-btn');
+const chatMessage    = document.getElementById('chat-message');
+const contactSection = document.getElementById('contact');
+
+const YOUR_WHATSAPP  = '8801611383770';
+
+// Show button immediately
+floatBtn.classList.add('float-visible');
+
+function openChat() {
+    chatPopup.classList.remove('chat-popup-hidden');
+    chatPopup.classList.add('chat-popup-visible');
+}
+function closeChat() {
+    chatPopup.classList.remove('chat-popup-visible');
+    chatPopup.classList.add('chat-popup-hidden');
+}
+
+floatBtn.addEventListener('click', e => {
+    e.preventDefault();
+    chatPopup.classList.contains('chat-popup-visible') ? closeChat() : openChat();
+});
+
+chatCloseBtn.addEventListener('click', closeChat);
+
+// Close on outside click
+document.addEventListener('click', e => {
+    const wrapper = document.getElementById('float-chat-wrapper');
+    if (!wrapper.contains(e.target)) closeChat();
+});
+
+// Update WhatsApp link dynamically from textarea
+function updateLinks() {
+    const msg    = chatMessage.value.trim() || 'Hi Tiba, I came across your portfolio and would love to connect!';
+    const waLink = document.getElementById('chat-send-whatsapp');
+    waLink.href  = `https://wa.me/${YOUR_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+}
+
+document.getElementById('chat-send-whatsapp').addEventListener('click', e => e.stopPropagation());
+document.getElementById('chat-send-linkedin').addEventListener('click', e => e.stopPropagation());
+
+chatMessage.addEventListener('input', updateLinks);
+updateLinks();
+
+// Hide chat wrapper when contact section is visible
+const floatObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        const wrapper = floatBtn.closest('#float-chat-wrapper');
+        wrapper.style.opacity       = entry.isIntersecting ? '0' : '1';
+        wrapper.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+        if (entry.isIntersecting) closeChat();
+    });
+}, { threshold: 0.1 });
+
+floatObserver.observe(contactSection);
+</script>
+</body>
+</html>
