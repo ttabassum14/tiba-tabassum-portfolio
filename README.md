@@ -24,10 +24,6 @@ I am a Computer Science and Engineering graduate interested in building reliable
 
 HTML, CSS, JavaScript, and other web technologies used in the implementation.
 
-## Live Website
-
-Visit my portfolio: https://ttabassum14.github.io
-
 ## Connect With Me
 
 - **GitHub:** https://github.com/ttabassum14
